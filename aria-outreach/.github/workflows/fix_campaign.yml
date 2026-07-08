@@ -1,0 +1,31 @@
+name: Fix Instantly Campaign
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fix:
+    name: Fix allow_risky_contacts + extend end_date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run fix script
+        env:
+          ANTHROPIC_API_KEY:            ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON:  ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SHEET_ID:              ${{ secrets.GOOGLE_SHEET_ID }}
+          INSTANTLY_API_KEY:            ${{ secrets.INSTANTLY_API_KEY }}
+          INSTANTLY_CAMPAIGN_ID:        ${{ secrets.INSTANTLY_CAMPAIGN_ID }}
+          APOLLO_API_KEY:               ${{ secrets.APOLLO_API_KEY }}
+          HUNTER_API_KEY:               ${{ secrets.HUNTER_API_KEY }}
+          TELEGRAM_BOT_TOKEN:           ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:             ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/fix_campaign.py

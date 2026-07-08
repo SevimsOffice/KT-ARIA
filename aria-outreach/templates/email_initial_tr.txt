@@ -1,0 +1,16 @@
+{salutation},
+
+{personalized_line}
+
+Bursa'daki üretim firmalarına özel 4 saatlik "AI Verimlilik Atölyesi" sunuyorum. Ben Sevim Durmuş — Endüstri Mühendisi, AWS Community Builder ve AI & Tech danışmanıyım.
+
+Atölye yerinde yapılıyor, soyut anlatım yok. Ekibinizin günlük en çok zaman alan 3 işi alıyoruz ve yapay zeka ile nasıl otomatize edileceğini bizzat uygulayarak gösteriyoruz; İngilizce yazışmadan stok analizine, müşteri şikayetlerinden ihracat dökümanlarına kadar.
+
+Geçen ay benzer bir firmada haftalık raporlama süresi 3 personel × 2 saatten 20 dakikaya indi.
+
+Bu hafta veya gelecek hafta 20 dakikanız var mı — atölyenin firmanıza uygun olup olmadığını birlikte değerlendirelim?
+
+Saygılarımla,
+Sevim Durmuş
+Endüstri Mühendisi | AWS Community Builder
+AI and Tech — aiandtech.cloud

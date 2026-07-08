@@ -1,0 +1,22 @@
+Türk bir şirkete gönderilecek satış e-postası için tek bir kişiselleştirilmiş açılış cümlesi yaz.
+
+Firma Bilgileri:
+- Firma adı: {company_name}
+- Sektör: {sector}
+- OSB: {osb}
+- Şehir: {city}
+- Ana faaliyet: {main_activity}
+- Olası operasyonel sorunlar: {pain_points}
+
+Kurallar (bunları kesinlikle uygula):
+1. Sadece 1 cümle yaz — ne fazla ne az
+2. Türkçe, resmi ama soğuk değil
+3. Firmanın spesifik faaliyetine veya sektörüne doğrudan değin
+4. "yapay zeka", "AI", "ChatGPT" veya teknoloji jargonu KULLANMA
+5. "Sizinle tanışmak istedim" gibi jenerik açılışlar YAZMA
+6. Bir gözlem veya bağlam içersin — satış yapmaya çalışıyormuş gibi görünmesin
+7. Maksimum 25 kelime
+8. Tırnak işareti veya başka karakter ekleme — sadece cümleyi yaz
+
+İyi örnek: "{city}'deki dokuma üretiminde ihracat siparişlerinin yönetiminin ne kadar emek yoğun olduğunu, sektördeki başka firmalarla çalışırken bizzat gördüm."
+Kötü örnek: "Firmanızın yapay zeka ile nasıl dönüşebileceğini görmek istedim."

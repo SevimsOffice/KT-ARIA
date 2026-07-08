@@ -1,0 +1,59 @@
+name: ARIA Daily Pipeline
+
+on:
+  schedule:
+    # 04:00 UTC = 07:00 Turkey (UTC+3)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no emails sent)'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['true', 'false']
+      limit:
+        description: 'Max companies to process (warmup sırasında 10 önerilir)'
+        required: false
+        default: '10'
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run ARIA daily pipeline
+        env:
+          ANTHROPIC_API_KEY:            ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON:  ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SHEET_ID:              ${{ secrets.GOOGLE_SHEET_ID }}
+          INSTANTLY_API_KEY:            ${{ secrets.INSTANTLY_API_KEY }}
+          INSTANTLY_CAMPAIGN_ID:        ${{ secrets.INSTANTLY_CAMPAIGN_ID }}
+          APOLLO_API_KEY:               ${{ secrets.APOLLO_API_KEY }}
+          HUNTER_API_KEY:               ${{ secrets.HUNTER_API_KEY }}
+          TELEGRAM_BOT_TOKEN:           ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:             ${{ secrets.TELEGRAM_CHAT_ID }}
+          DAILY_SEND_LIMIT:             ${{ github.event.inputs.limit || '10' }}
+        run: |
+          DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
+          if [ "$DRY_RUN" = "true" ]; then
+            python scripts/run_daily_pipeline.py --dry-run --limit $DAILY_SEND_LIMIT
+          else
+            python scripts/run_daily_pipeline.py --limit $DAILY_SEND_LIMIT
+          fi

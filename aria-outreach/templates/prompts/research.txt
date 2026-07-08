@@ -1,0 +1,14 @@
+Aşağıdaki firma hakkında kısa bir operasyonel analiz yap. Sadece verilen bilgileri kullan — tahmin yapıyorsan belirt.
+
+Firma: {company_name}
+Domain: {domain}
+Sektör: {sector}
+OSB: {osb}
+
+Web sitesi içeriği (ilk {MAX_CHARS} karakter):
+{website_text}
+
+Şu format ile yanıt ver — başka hiçbir şey yazma, sadece bu 3 satırı:
+ANA_FAALIYET: [Firmanın ana üretim veya hizmet faaliyeti — tek cümle, max 15 kelime]
+SORUN_NOKTALARI: [Bu sektörde en yaygın zaman/kaynak israfı olan 2-3 operasyonel alan — virgülle ayır]
+AI_HAZIRLIK: [düşük / orta / yüksek — web sitesindeki dijitalleşme ipuçlarına göre tahmin et]

@@ -1,0 +1,22 @@
+Bir satış e-postasına gelen yanıtı sınıflandır. E-posta Bursa'daki bir firmaya AI eğitim atölyesi için gönderilmişti.
+
+Yanıt metni:
+---
+{reply_body}
+---
+Gönderen: {from_email}
+
+Kategori tanımları:
+- HOT: Toplantı veya görüşme istiyor / fiyat soruyor / hemen ilgileniyor / "ne zaman gelebilirsiniz" diyor
+- WARM: İlgili ama şu an hazır değil / başka birine yönlendiriyor / daha fazla bilgi istiyor / "ileride konuşalım" diyor
+- COLD: Nazikçe reddediyor / bütçe yok / ilgi yok / zaten başkasıyla çalışıyor
+- UNSUBSCRIBE: E-posta listesinden çıkmak istiyor / "bir daha yazma" / şikayet ediyor
+- OUT_OF_OFFICE: Otomatik yanıt / tatil / izin mesajı
+
+Şu JSON formatında yanıt ver (başka hiçbir şey yazma):
+{{
+  "category": "HOT/WARM/COLD/UNSUBSCRIBE/OUT_OF_OFFICE",
+  "summary": "Tek cümle Türkçe açıklama — ne istediğini özetle",
+  "suggested_response": "Eğer HOT veya WARM ise: kısa, doğal bir Türkçe yanıt taslağı (max 50 kelime). Diğer kategoriler için boş string.",
+  "confidence": 85
+}}
