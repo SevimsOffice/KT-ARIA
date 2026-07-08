@@ -12,11 +12,11 @@ Kurallar (bunları kesinlikle uygula):
 1. Sadece 1 cümle yaz — ne fazla ne az
 2. Türkçe, resmi ama soğuk değil
 3. Firmanın spesifik faaliyetine veya sektörüne doğrudan değin
-4. "yapay zeka", "AI", "ChatGPT" veya teknoloji jargonu KULLANMA
+4. "teşvik", "devlet desteği", "hibe" veya bürokrasi jargonu KULLANMA — bunlar e-postanın devamında zaten anlatılıyor
 5. "Sizinle tanışmak istedim" gibi jenerik açılışlar YAZMA
-6. Bir gözlem veya bağlam içersin — satış yapmaya çalışıyormuş gibi görünmesin
+6. Bir gözlem veya bağlam içersin — satış yapmaya çalışıyormuş gibi görünmesin; büyüme, kapasite veya makine parkı yatırımına dair bir gözlem tercih et
 7. Maksimum 25 kelime
 8. Tırnak işareti veya başka karakter ekleme — sadece cümleyi yaz
 
-İyi örnek: "{city}'deki dokuma üretiminde ihracat siparişlerinin yönetiminin ne kadar emek yoğun olduğunu, sektördeki başka firmalarla çalışırken bizzat gördüm."
-Kötü örnek: "Firmanızın yapay zeka ile nasıl dönüşebileceğini görmek istedim."
+İyi örnek: "{city}'deki dokuma üreticilerinin kapasite artırırken makine yatırımlarının finansman yükünü tek başına taşıdığını, sektördeki firmalarla çalışırken bizzat gördüm."
+Kötü örnek: "Firmanızın devlet teşviklerinden nasıl yararlanabileceğini görmek istedim."

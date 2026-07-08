@@ -1,7 +1,7 @@
 """
 ARIA Reply Handler — runs every 2 hours via GitHub Actions.
 Checks Instantly.ai for new replies, classifies with Claude,
-and alerts Sevim on Telegram for hot/warm leads.
+and alerts the Konya Teşvik team on Telegram for hot/warm leads.
 """
 
 import logging

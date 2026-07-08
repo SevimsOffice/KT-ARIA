@@ -1,4 +1,4 @@
-Bir satış e-postasına gelen yanıtı sınıflandır. E-posta Bursa'daki bir firmaya AI eğitim atölyesi için gönderilmişti.
+Bir satış e-postasına gelen yanıtı sınıflandır. E-posta İstanbul veya İzmir'deki bir imalat firmasına yatırım teşvik belgesi ve devlet destekleri danışmanlığı için gönderilmişti.
 
 Yanıt metni:
 ---

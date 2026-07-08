@@ -45,7 +45,7 @@ class EmailComposer:
             company_name=company_name,
             sector=sector,
         )
-        subject = f"{company_name} için yapay zeka verimlilik atölyesi"
+        subject = f"{company_name} için yatırım teşvik desteği"
         return {"subject": subject, "body": body, "personalized_line": personalized_line}
 
     def compose_followup1(self, company_name: str, sector: str, contact_name: str = "") -> dict:
@@ -107,23 +107,23 @@ def _make_salutation(contact_name: str) -> str:
 def _get_sector_example(sector: str) -> str:
     sector_lower = sector.lower()
     examples = {
-        "tekstil": "kumaş desenlerini yapay zeka ile üretip tasarım süresini %70 azaltan bir tekstil firması",
-        "otomotiv": "tahminsel bakım sistemiyle yıllık 200 saat duruş süresini ortadan kaldıran bir otomotiv yan sanayi",
-        "metal": "kalite kontrol hatalarını gerçek zamanlı tespit eden bir metal sanayi firması",
-        "makine": "CNC programlama sürelerini yapay zeka ile %40 kısaltan bir makine üreticisi",
-        "gıda": "son kullanma tarihi yönetimini otomatikleştiren bir gıda üreticisi",
-        "plastik": "kalıp parametrelerini yapay zeka ile optimize eden bir plastik sanayicisi",
+        "tekstil": "Yeni dokuma veya iplik makinesi yatırımında teşvik belgesiyle KDV istisnası ve gümrük muafiyetinden yararlanan tekstil üreticileri, yatırım maliyetini kayda değer oranda düşürüyor",
+        "otomotiv": "Üretim hattını genişleten otomotiv yan sanayi firmaları, teşvik belgesi kapsamındaki SGK prim desteği ve vergi indiriminden yıllarca yararlanabiliyor",
+        "metal": "CNC ve işleme merkezi yatırımı yapan metal sanayi firmaları, teşvik belgesiyle ithal makinelerde gümrük vergisi ödemeden yatırımlarını tamamlayabiliyor",
+        "makine": "Kapasite artıran makine üreticileri, yatırım teşvik belgesiyle hem KDV istisnasından hem de bölgesel desteklerden aynı anda yararlanabiliyor",
+        "gıda": "Yeni işleme ve paketleme hattı kuran gıda üreticileri, teşvik belgesi ve kalkınma ajansı destekleriyle yatırım yükünü önemli ölçüde hafifletebiliyor",
+        "plastik": "Enjeksiyon makinesi parkını yenileyen plastik sanayicileri, teşvik belgesiyle KDV istisnası ve SGK prim desteğinden birlikte yararlanabiliyor",
     }
     for key, example in examples.items():
         if key in sector_lower:
             return example
-    return "benzer sektörde faaliyet gösteren bir OSB firması"
+    return "Makine ve kapasite yatırımı yapan imalat firmaları, yatırım teşvik belgesiyle KDV istisnası, gümrük muafiyeti ve SGK prim desteğinden yararlanabiliyor"
 
 
 def _fallback_personalized_line(company_name: str, sector: str, osb: str) -> str:
     return (
-        f"{osb}'deki {sector.lower()} operasyonunuzda yapay zekanın "
-        f"yaratabileceği verimlilik fırsatlarını değerlendirmek istedim."
+        f"{osb}'deki {sector.lower()} üretiminizde planladığınız makine ve kapasite "
+        f"yatırımlarında yararlanabileceğiniz destekleri değerlendirmek istedim."
     )
 
 

@@ -2,7 +2,9 @@
 ARIA Daily Pipeline — runs every morning at 7 AM Turkey time via GitHub Actions.
 
 Flow:
-  1. Scrape NOSAB + DOSAB + KAYAPA OSB websites for new companies
+  1. Scrape İstanbul + İzmir OSB websites for new companies
+     (Konya Teşvik target: imalat yapan mikro/küçük/orta ölçekli,
+      makine yatırımı planlayan firmalar — NACE imalat kodları)
   2. Deduplicate against master sheet
   3. Enrich each new company with email (Apollo → Hunter → guesser)
   4. Research each company website (Claude Haiku)
@@ -129,14 +131,14 @@ def run(dry_run: bool = False, limit: int = 100):
         )
 
     # --- Step 1: Scrape ---
-    logger.info("Step 1: Scraping OSB websites...")
+    # Konya Teşvik target regions: İstanbul + İzmir OSBs.
+    # Bursa scrapers (NOSAB/DOSAB/KAYAPA) are kept in src/scraper/ but not
+    # called — re-add them below if the target region expands later.
+    logger.info("Step 1: Scraping İstanbul + İzmir OSB websites...")
     try:
-        nosab = scrape_nosab()
-        dosab = scrape_dosab()
-        kayapa = scrape_kayapa()
         istanbul = scrape_istanbul()
         izmir = scrape_izmir()
-        all_scraped = merge_sources([nosab, dosab, kayapa, istanbul, izmir])
+        all_scraped = merge_sources([istanbul, izmir])
         logger.info(f"Scraped total: {len(all_scraped)} companies")
     except Exception as e:
         logger.error(f"Scraping failed: {e}")
@@ -169,7 +171,7 @@ def run(dry_run: bool = False, limit: int = 100):
         domain  = company.get("Domain", "")
         sector  = company.get("Sector", "")
         osb     = company.get("OSB", "")
-        city    = company.get("City", "Bursa")
+        city    = company.get("City", "")
 
         logger.info(f"Processing [{i+1}/{len(fresh)}]: {name}")
 

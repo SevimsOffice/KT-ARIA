@@ -1,21 +1,26 @@
 # ARIA — Automated Revenue Intelligence Agent
-### Built for Sevim Durmuş / aiandtech.cloud
+### Konya Teşvik Danışmanlık edition — yatırım teşvik ve devlet destekleri danışmanlığı
+*(originally built for Sevim Durmuş / aiandtech.cloud)*
 
 MEET ARIA
 <img width="1080" height="1456" alt="Aria Sales Agent AIANDTECH TURKEY" src="https://github.com/user-attachments/assets/ff5f8b64-fcfb-4019-a0e3-25f24aa3fb34" />
 
 
-ARIA runs every morning at 7 AM Turkey time, finds new Bursa OSB companies,
-researches them, writes personalized Turkish outreach emails, and adds them
-to your Instantly.ai campaign — automatically. You only get a Telegram
-message when someone says yes.
+ARIA runs every morning at 7 AM Turkey time, finds new İstanbul and İzmir
+OSB manufacturing companies (micro/small/medium scale, machine-investment
+prospects), researches them, writes personalized Turkish outreach emails
+about yatırım teşvik belgesi and state incentives, and adds them to your
+Instantly.ai campaign — automatically. You only get a Telegram message
+when someone says yes.
 
 ---
 
 ## What ARIA Does Daily
 
 ```
-07:00 AM Turkey  →  Scrape NOSAB + DOSAB + KAYAPA for new companies
+07:00 AM Turkey  →  Scrape İstanbul + İzmir OSBs for new companies
+                    (İkitelli, Tuzla, Hadımköy, Dudullu, Kemalpaşa,
+                     Atatürk, Çiğli, Torbalı)
                  →  Enrich with emails (Apollo → Hunter → smart guess)
                  →  Research each company website (Claude AI)
                  →  Write personalized Turkish opening line (Claude AI)
@@ -48,7 +53,7 @@ Every Sunday    →  Weekly intelligence report to Telegram
 
 ### 2. Instantly.ai
 1. Sign up at [app.instantly.ai](https://app.instantly.ai)
-2. Add your email: `sevim@aiandtech-info.com`
+2. Add your sending email (Konya Teşvik Danışmanlık outreach address)
 3. Start the **warm-up** process (takes 2 weeks — start today!)
 4. Create a campaign with 3-step sequence:
    - Email 1: Use `{{personalized_line}}` and `{{sector}}` variables
